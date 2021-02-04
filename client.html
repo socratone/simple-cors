@@ -16,7 +16,7 @@
       };
 
       try {
-        // simple request가 아니므로 preflight request가 발생하고
+        // DELETE 메서드는 simple request가 아니므로 preflight request가 발생하고
         // cors 허가가 되지 않은 도메인이라면 cors 에러가 발생한다.
         const response = await fetch('http://localhost:3000', requestOptions);
         const result = await response.text(); 

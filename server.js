@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 
 var corsOptions = {
-  origin: ['http://127.0.0.1:5500'],
+  origin: ['http://127.0.0.1:5500'], // preflight시 해당 경로만 허가한다. 
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
