@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="button">클릭</button>
+  <script>
+    const button = document.getElementById('button');
+    button.addEventListener('click', async () => {
+      var requestOptions = {
+        method: 'DELETE',
+        redirect: 'follow'
+      };
+
+      try {
+        // simple request가 아니므로 preflight request가 발생하고
+        // cors 허가가 되지 않은 도메인이라면 cors 에러가 발생한다.
+        const response = await fetch('http://localhost:3000', requestOptions);
+        const result = await response.text(); 
+        console.log('result:', result);
+      } catch (error) {
+        console.log('error:', error);
+      }
+    });
+  </script>
+</body>
+</html>
